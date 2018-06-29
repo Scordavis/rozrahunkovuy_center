@@ -4743,12 +4743,13 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 body {
   font-size: 16px;
-  min-width: 320px;
+  min-width: 992px;
   position: relative;
   line-height: 1.65;
   font-family: "ubuntu", sans-serif;
   overflow-x: hidden;
-  color: #606060; }
+  color: #606060;
+  counter-reset: section; }
   body input, body textarea {
     border: #666 1px solid;
     outline: none; }
@@ -4843,6 +4844,10 @@ button {
     display: inline-block;
     content: ' / ';
     margin: 0 8px; }
+  .site-header__logo {
+    width: 100%;
+    max-width: 80px;
+    height: auto; }
   .site-header__settings {
     position: relative;
     display: block;
@@ -4883,6 +4888,7 @@ button {
     font-weight: bold;
     text-transform: uppercase; }
   .characteristics-cards__link--grey {
+    display: block;
     color: #bababa; }
     .characteristics-cards__link--grey:hover {
       color: #999999; }
@@ -4892,5 +4898,68 @@ button {
     .characteristics-cards__link--blue:hover {
       color: #003870; }
 
+.houses {
+  border-bottom: 1px solid #f0f0f0; }
+  .houses:last-of-type {
+    border: none; }
+  .houses__counter {
+    position: relative;
+    display: inline-block;
+    color: #0051a3;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal; }
+    .houses__counter:after {
+      position: relative;
+      content: '.'; }
+  .houses__title {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: normal; }
+    .houses__title:before {
+      display: inline-block;
+      margin-right: 4px;
+      counter-increment: section;
+      content: counter(section) ".";
+      color: #0051a3;
+      font-size: 20px;
+      font-weight: bold; }
+  .houses__item {
+    margin-bottom: 14px; }
+  .houses__wrapper {
+    height: 98px;
+    padding: 10px 22px;
+    border: 2px solid #f2f2f2; }
+  .houses__card {
+    height: 100%;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end; }
+  .houses__img {
+    max-width: 38px;
+    height: auto; }
+  .houses__numbers {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: .7; }
+
 /*==========  Desktop First  ==========*/
+@media (max-width: 1199.98px) {
+  body {
+    font-size: 14px;
+    line-height: 1.65; }
+  .site-header {
+    background-color: #0051a3;
+    min-height: 120px;
+    height: 120px;
+    color: white; }
+    .site-header__title {
+      font-size: 18px; }
+  .houses__img {
+    max-width: 30px; }
+  .characteristics-cards__title {
+    font-size: 14px; } }
+
 /*==========  Mobile First  ==========*/

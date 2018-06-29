@@ -11,12 +11,13 @@
 
 body
 	font-size: 16px
-	min-width: 320px
+	min-width: 992px
 	position: relative
 	line-height: 1.65
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
+	counter-reset: section
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -121,6 +122,10 @@ button
 			margin: 0 8px
 	&__logo-wrapper
 	&__logo
+		width: 100%
+		max-width: 80px
+		height: auto
+
 	&__button
 	&__settings
 		position: relative
@@ -180,6 +185,7 @@ button
 
 	&__link
 		&--grey
+			display: block
 			color: darken(white, 27%)
 			&:hover
 				color: darken(white, 40%)
@@ -188,6 +194,59 @@ button
 			font-weight: 700
 			&:hover
 				color: darken($accent, 10%)
+
+// .houses
+.houses
+	border-bottom: 1px solid darken(white, 6%)
+	&:last-of-type
+			border: none
+
+	&__counter
+		position: relative
+		display: inline-block
+		color: $accent
+		font-size: 20px
+		font-weight: bold
+		font-style: normal
+		&:after
+			position: relative
+			content: '.'
+
+	&__title
+		display: inline-block
+		font-size: 18px
+		font-weight: normal
+		&:before
+			display: inline-block
+			margin-right: 4px
+			counter-increment: section
+			content: counter(section) "."
+			color: $accent
+			font-size: 20px
+			font-weight: bold
+
+	&__row
+	&__item
+		margin-bottom: 14px
+
+	&__wrapper
+		height: 98px
+		padding: 10px 22px
+		border: 2px solid darken(white, 5%)
+
+	&__card
+		height: 100%
+		align-items: flex-end
+
+	&__img
+		max-width: 38px
+		height: auto
+
+	&__numbers
+		margin-bottom: 0
+		font-size: 20px
+		font-weight: bold
+		line-height: .7
 
 
 
