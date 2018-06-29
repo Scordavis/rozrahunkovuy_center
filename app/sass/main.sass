@@ -67,23 +67,27 @@ button
 
 .button
 	&--red
-		background-color: $attention
+		background-color: $danger
 		color: white
-		border: 1px solid transparent
+		border: 1px solid white
 		cursor: pointer
 		@include transition(.2s)
 		&:hover
 			background-color: white
-			border-color: $attention
-			color: $attention
+			border-color: $danger
+			color: $danger
 
 	&--blue
 		background-color: $accent
 		color: white
-		border: 1px solid transparent
+		border: 1px solid white
 		@include transition(.2s)
 		cursor: pointer
 		&:hover
+			background-color: white
+			border-color: $accent
+			color: $accent
+		&.active
 			background-color: white
 			border-color: $accent
 			color: $accent
@@ -96,6 +100,96 @@ button
 
 	&--100
 		width: 100%
+
+// .site-header
+.site-header
+	background-color: $accent
+	min-height: 120px
+	height: 120px
+	color: white
+	&__title-block
+	&__title
+		font-size: 20px
+		text-transform: uppercase
+	&__city
+		font-size: 14px
+		text-transform: uppercase
+	&__region
+		&:before
+			display: inline-block
+			content: ' / '
+			margin: 0 8px
+	&__logo-wrapper
+	&__logo
+	&__button
+	&__settings
+		position: relative
+		display: block
+		width: auto
+		transform: rotate(0deg)
+		@include transition(.3s)
+		// z-index: 2
+		// &:before
+		// 	position: absolute
+		// 	top: -12px
+		// 	right: 0
+		// 	bottom: 0
+		// 	left: 19px
+		// 	content: ''
+		// 	display: block
+		// 	width: 60px
+		// 	height: 60px
+		// 	background-color: white
+		// 	opacity: .5
+		// 	border-radius: 100%
+		// 	transform: scale(0)
+		// 	z-index: -1
+		// 	@include transition(.1s)
+		&:hover
+			transform: rotate(90deg)
+		// 	&:before
+		// 		transform: scale(1.5)
+		// 		opacity: 0
+
+// .nav-section
+.nav-section
+	height: 74px
+	background-color: $danger
+	&__button
+		height: 50px
+
+// .characteristics-cards
+.characteristics-cards
+	background-color: darken(white, 5%)
+	&__item
+		display: block
+		width: 100%
+		background-color: white
+		box-shadow: 0px 8px 10px 0px fade-out(black, .9)
+	&__number
+		color: fade-out($accent, .8)
+		font-size: 72px
+		font-weight: bold
+		line-height: 1
+
+	&__title
+		color: $text
+		font-size: 17px
+		font-weight: bold
+		text-transform: uppercase
+
+	&__link
+		&--grey
+			color: darken(white, 27%)
+			&:hover
+				color: darken(white, 40%)
+		&--blue
+			color: $accent
+			font-weight: 700
+			&:hover
+				color: darken($accent, 10%)
+
+
 
 
 
